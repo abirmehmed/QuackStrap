@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🦆 QuackTrack — Bootstrap Edition</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<style>
+  body { background: linear-gradient(180deg, #eef7f4, #f7f5ef); min-height: 100vh; }
+  .navbar-brand { font-weight: 800; letter-spacing: 1px; }
+  .hero-slide { height: 340px; object-fit: cover; }
+  .stat-card { border: 0; border-radius: 16px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+  .btn-duck { background: #0f766e; color: #fff; }
+  .btn-duck:hover { background: #0b5d57; color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- ===== 1. MENU ===== -->
+<nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">🦆 QuackTrack <span class="badge text-bg-success">BS5</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#stats">Stats</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ledger">Ledger</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Flock</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">🐣 34 layers</a></li>
+            <li><a class="dropdown-item" href="#">🌱 11 upcoming</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">🦤 Khaki Campbell</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 2. SLIDER ===== -->
+<div id="hero" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button data-bs-target="#hero" data-bs-slide-to="0" class="active"></button>
+    <button data-bs-target="#hero" data-bs-slide-to="1"></button>
+    <button data-bs-target="#hero" data-bs-slide-to="2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://picsum.photos/1600/600?random=1" class="d-block w-100 hero-slide" alt="farm">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>34 layers strong</h5>
+        <p>Khaki Campbell command center.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://picsum.photos/1600/600?random=2" class="d-block w-100 hero-slide" alt="eggs">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>20–23 eggs a day</h5>
+        <p>30+ when the eleven join.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://picsum.photos/1600/600?random=3" class="d-block w-100 hero-slide" alt="profit">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Every taka tracked</h5>
+        <p>Rice in, eggs out, profit visible.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" data-bs-target="#hero" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" data-bs-target="#hero" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<main class="container py-5">
+
+<!-- ===== 3. CARDS (stats) ===== -->
+<section id="stats" class="mb-5">
+  <h2 class="h4 mb-3">📊 Farm vital signs</h2>
+  <div class="row g-3">
+    <div class="col-6 col-lg-3">
+      <div class="card stat-card h-100"><div class="card-body">
+        <div class="fs-2">🥚</div>
+        <div class="text-muted small">Eggs today</div>
+        <div class="fs-3 fw-bold" id="stToday">–</div>
+      </div></div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="card stat-card h-100"><div class="card-body">
+        <div class="fs-2">📈</div>
+        <div class="text-muted small">7-day average</div>
+        <div class="fs-3 fw-bold" id="stAvg">–</div>
+      </div></div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="card stat-card h-100"><div class="card-body">
+        <div class="fs-2">🦆</div>
+        <div class="text-muted small">Lay rate</div>
+        <div class="fs-3 fw-bold" id="stLay">–</div>
+      </div></div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="card stat-card h-100"><div class="card-body">
+        <div class="fs-2">🏆</div>
+        <div class="text-muted small">Profit (month)</div>
+        <div class="fs-3 fw-bold" id="stProfit">–</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. NAVPILLS + 4. TABLE & FORM ===== -->
+<section id="ledger" class="mb-5">
+  <h2 class="h4 mb-3">📒 The ledger</h2>
+  <ul class="nav nav-pills mb-3">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pane-eggs">🥚 Eggs</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-expenses">💰 Expenses</button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-sales">💵 Sales</button></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="pane-eggs">
+      <form id="eggForm" class="row g-2 mb-3">
+        <div class="col-auto"><input type="number" min="0" class="form-control" id="eggCount" placeholder="How many eggs today?" required></div>
+        <div class="col-auto"><button class="btn btn-duck">Log 🥚</button></div>
+      </form>
+      <ul class="list-group" id="eggList"></ul>
+    </div>
+
+    <div class="tab-pane fade" id="pane-expenses">
+      <form id="expForm" class="row g-2 mb-3">
+        <div class="col-md-5"><input class="form-control" id="expItem" placeholder="What? (rice, bran, medicine…)" required></div>
+        <div class="col-md-3"><input type="number" min="0" class="form-control" id="expCost" placeholder="Cost ৳" required></div>
+        <div class="col-auto"><button class="btn btn-duck">Log 💰</button></div>
+      </form>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle bg-white rounded">
+          <thead><tr><th>Date</th><th>Item</th><th class="text-end">Cost</th><th></th></tr></thead>
+          <tbody id="expTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="pane-sales">
+      <form id="saleForm" class="row g-2 mb-3">
+        <div class="col-md-4"><input type="number" min="0" class="form-control" id="saleEggs" placeholder="Eggs sold 🥚" required></div>
+        <div class="col-md-4"><input type="number" min="0" class="form-control" id="saleAmount" placeholder="Amount ৳" required></div>
+        <div class="col-auto"><button class="btn btn-duck">Log 💵</button></div>
+      </form>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle bg-white rounded">
+          <thead><tr><th>Date</th><th>Eggs</th><th class="text-end">Amount</th><th></th></tr></thead>
+          <tbody id="saleTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. ACCORDION ===== -->
+<section id="faq" class="mb-5">
+  <h2 class="h4 mb-3">🦆 Farm FAQ</h2>
+  <div class="accordion" id="faqAcc">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">Why did the lay rate drop?</button>
+      </h2>
+      <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+        <div class="accordion-body">Molt, heat, or short daylight. Log eggs daily and watch the 7-day average — it tells the truth faster than feelings.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">What does the flock eat?</button>
+      </h2>
+      <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+        <div class="accordion-body">Rice, rice bran, and greens. Every bag goes into the 💰 Expenses tab — the profit card watches it all.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3">When will the 11 start laying?</button>
+      </h2>
+      <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+        <div class="accordion-body">Around 2 months from now. Expect ~30 eggs/day when they join — the 🌱 Upcoming card is counting down.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q4">Why keep a drake if he lays nothing?</button>
+      </h2>
+      <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+        <div class="accordion-body">Every farm needs a security guard. 🦤 He earns his rice.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. FLEX & GRID demo ===== -->
+<section class="mb-5">
+  <h2 class="h4 mb-3">🧱 Under the hood: grid + flex</h2>
+  <div class="row g-2 mb-2">
+    <div class="col-12 col-md-6 col-lg-3"><div class="p-3 rounded text-bg-success text-center">col-12 col-md-6 col-lg-3</div></div>
+    <div class="col-12 col-md-6 col-lg-3"><div class="p-3 rounded text-bg-info text-center">col-12 col-md-6 col-lg-3</div></div>
+    <div class="col-12 col-md-6 col-lg-3"><div class="p-3 rounded text-bg-warning text-center">col-12 col-md-6 col-lg-3</div></div>
+    <div class="col-12 col-md-6 col-lg-3"><div class="p-3 rounded text-bg-danger text-center">col-12 col-md-6 col-lg-3</div></div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 p-3 bg-white rounded shadow-sm">
+    <span class="badge text-bg-dark">d-flex</span>
+    <span class="badge text-bg-dark">justify-content-between</span>
+    <span class="badge text-bg-dark">align-items-center</span>
+    <span class="badge text-bg-dark">flex-wrap</span>
+    <span class="badge text-bg-dark">gap-3</span>
+  </div>
+</section>
+</main>
+
+<!-- ===== 7. MODAL ===== -->
+<div class="modal fade" id="confirmModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete this record? 🪦</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">It will vanish from the ledger forever. The ducks will not be consulted.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Keep</button>
+        <button class="btn btn-danger" id="confirmDelete">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-white border-top py-4 mt-5">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-4">🦆 QuackTrack — Bootstrap Edition</div>
+      <div class="col-md-4">Same kitchen: duck-api :4001</div>
+      <div class="col-md-4 text-md-end">Built in the terminal 🖥️</div>
+    </div>
+    <div class="d-flex justify-content-between flex-wrap gap-2 mt-3 text-muted small">
+      <span>© 2026 Abir Mehmed</span>
+      <span>Khaki Campbell forever</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
