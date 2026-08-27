@@ -51,6 +51,7 @@ section { padding: 3.2rem 0; }
 .accordion-button:not(.collapsed) { background: #e9f4f1; color: var(--teal-d); box-shadow: none; }
 footer { background: var(--ink); color: #cfd8d3; }
 </style>
+<link rel="stylesheet" href="personality.css">
 </head>
 <body>
 
@@ -216,6 +217,12 @@ footer { background: var(--ink); color: #cfd8d3; }
     </div>
   </div>
 </section>
+
+<section id="chart">
+  <p class="eyebrow">The last seven days</p>
+  <h2 class="mb-4">Egg rhythm 📊</h2>
+  <div class="card p-4 pt-5"><div class="chart" id="eggChart"></div></div>
+</section>
 </main>
 
 <!-- 7. MODAL -->
@@ -246,5 +253,6 @@ footer { background: var(--ink); color: #cfd8d3; }
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="app.js"></script>
+<script src="personality.js"></script>
 </body>
 </html>
