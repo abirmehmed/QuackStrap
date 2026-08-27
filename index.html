@@ -14,13 +14,14 @@
   .btn-duck { background: #0f766e; color: #fff; }
   .btn-duck:hover { background: #0b5d57; color: #fff; }
 </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- ===== 1. MENU ===== -->
 <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="#">🦆 QuackStrap <span class="badge text-bg-success">BS5</span></a>
+    <a class="navbar-brand" href="#"><span class="brand-bubble">🦆</span> QuackStrap <span class="badge text-bg-success">BS5</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -85,7 +86,7 @@
 
 <!-- ===== 3. CARDS (stats) ===== -->
 <section id="stats" class="mb-5">
-  <h2 class="h4 mb-3">📊 Farm vital signs</h2>
+  <div class="overline">Live from the coop</div><h2 class="h4 mb-3"> Farm vital signs</h2>
   <div class="row g-3">
     <div class="col-6 col-lg-3">
       <div class="card stat-card h-100"><div class="card-body">
@@ -120,7 +121,7 @@
 
 <!-- ===== 5. NAVPILLS + 4. TABLE & FORM ===== -->
 <section id="ledger" class="mb-5">
-  <h2 class="h4 mb-3">📒 The ledger</h2>
+  <div class="overline">Every egg, every taka</div><h2 class="h4 mb-3">📒 The ledger</h2>
   <ul class="nav nav-pills mb-3">
     <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pane-eggs">🥚 Eggs</button></li>
     <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pane-expenses">💰 Expenses</button></li>
@@ -168,7 +169,7 @@
 
 <!-- ===== 6. ACCORDION ===== -->
 <section id="faq" class="mb-5">
-  <h2 class="h4 mb-3">🦆 Farm FAQ</h2>
+  <div class="overline">Ask the farmer</div><h2 class="h4 mb-3">🦆 Farm FAQ</h2>
   <div class="accordion" id="faqAcc">
     <div class="accordion-item">
       <h2 class="accordion-header">
@@ -207,7 +208,7 @@
 
 <!-- ===== 8. FLEX & GRID demo ===== -->
 <section class="mb-5">
-  <h2 class="h4 mb-3">🧱 Under the hood: grid + flex</h2>
+  <div class="overline">Bootstrap bones</div><h2 class="h4 mb-3">🧱 Under the hood: grid + flex</h2>
   <div class="row g-2 mb-2">
     <div class="col-12 col-md-6 col-lg-3"><div class="p-3 rounded text-bg-success text-center">col-12 col-md-6 col-lg-3</div></div>
     <div class="col-12 col-md-6 col-lg-3"><div class="p-3 rounded text-bg-info text-center">col-12 col-md-6 col-lg-3</div></div>

@@ -96,3 +96,22 @@ $("#confirmDelete").addEventListener("click", async () => {
 });
 
 loadAll();
+
+// farm-at-a-glance strip
+fetch(API + "/stats").then((r) => r.json()).then((s) => {
+  const g = (id) => document.getElementById(id);
+  if (g("gzToday")) {
+    g("gzToday").textContent = s.eggsToday;
+    g("gzLayers").textContent = s.layers;
+    g("gzUpcoming").textContent = s.upcoming;
+  }
+});
+
+// farm-at-a-glance: live flock + feed estimate
+fetch(API + "/stats").then((r) => r.json()).then((s) => {
+  const g = (id) => document.getElementById(id);
+  const ducks = s.layers + s.upcoming + 1;
+  if (g("gzLayers")) g("gzLayers").textContent = s.layers;
+  if (g("gzUpcoming")) g("gzUpcoming").textContent = s.upcoming;
+  if (g("gzFeed")) g("gzFeed").textContent = (ducks * 0.12).toFixed(1) + " kg";
+});
