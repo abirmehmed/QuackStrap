@@ -1,0 +1,19 @@
+/* ===== polish: money first ===== */
+.card:has(#stProfit) {
+  background: linear-gradient(135deg, #0f766e, #0b5d57);
+  border: 0;
+}
+.card:has(#stProfit) .card-body { color: #fff; }
+.card:has(#stProfit) .text-muted { color: #cdeae6 !important; }
+.card:has(#stProfit) #stProfit.text-success { color: #a7f3d0 !important; }
+.card:has(#stProfit) #stProfit.text-danger { color: #fecaca !important; }
+
+section:has(#gzLayers) .text-bg-success { background: #e8f7ee !important; color: #14532d !important; }
+section:has(#gzLayers) .text-bg-info    { background: #e0f6fb !important; color: #0e7490 !important; }
+section:has(#gzLayers) .text-bg-warning { background: #fdf3d7 !important; color: #92400e !important; }
+section:has(#gzLayers) .text-bg-danger  { background: #fdecec !important; color: #7f1d1d !important; }
+section:has(#gzLayers) .row > div > div {
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-weight: 600;
+}
