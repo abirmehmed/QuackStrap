@@ -1,5 +1,8 @@
 # 🦆 QuackStrap
 
+**Live demo:** https://quack-strap.vercel.app 🌍
+**Kitchen (API):** https://ducky-api-suf3.onrender.com 🍳
+
 QuackTrack — Bootstrap Edition. A duck-farm management dashboard for my
 Khaki Campbell flock (34 layers + 11 upcoming), built as a Bootstrap 5
 component showcase wired to a live Express API.
