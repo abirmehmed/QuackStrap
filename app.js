@@ -1,4 +1,4 @@
-const API = "http://localhost:4001/api";
+const API = /^https/.test(location.protocol) ? "https://ducky-api-suf3.onrender.com/api" : "http://localhost:4001/api";
 const $ = (s) => document.querySelector(s);
 
 async function get(p) { return (await fetch(API + p)).json(); }
