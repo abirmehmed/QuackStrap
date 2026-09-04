@@ -115,3 +115,38 @@ fetch(API + "/stats").then((r) => r.json()).then((s) => {
   if (g("gzUpcoming")) g("gzUpcoming").textContent = s.upcoming;
   if (g("gzFeed")) g("gzFeed").textContent = (ducks * 0.12).toFixed(1) + " kg";
 });
+
+// ===== pagination: 10 per page, newest first =====
+const PAGE = 10;
+let eggPage = 0;
+let eggRows = [];
+
+async function loadEggs() {
+  eggRows = (await get("/eggs")).slice().reverse();
+  renderEggs();
+}
+
+function renderEggs() {
+  const pages = Math.max(1, Math.ceil(eggRows.length / PAGE));
+  if (eggPage > pages - 1) eggPage = pages - 1;
+  const slice = eggRows.slice(eggPage * PAGE, eggPage * PAGE + PAGE);
+  $("#eggList").innerHTML = slice.length
+    ? slice.map((r) => `
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>${r.date}: <b>${r.count}</b> eggs</span>
+        <button class="btn btn-sm btn-outline-danger" data-del="eggs/${r.id}">✕</button>
+      </li>`).join("")
+    : '<li class="list-group-item text-muted">No eggs yet.</li>';
+  const pager = document.getElementById("eggPager");
+  if (pager) pager.innerHTML = `
+    <button class="btn btn-sm btn-duck" data-page="-1" ${eggPage === 0 ? "disabled" : ""}>← newer</button>
+    <span class="small text-muted mx-2">page ${eggPage + 1} / ${pages}</span>
+    <button class="btn btn-sm btn-duck" data-page="1" ${eggPage >= pages - 1 ? "disabled" : ""}>older →</button>`;
+}
+
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-page]");
+  if (!b || b.disabled) return;
+  eggPage += Number(b.dataset.page);
+  renderEggs();
+});
